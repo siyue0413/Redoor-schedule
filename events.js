@@ -96,7 +96,7 @@ const REDOOR_EVENTS = [
     date: "2026-08-15",
     type: "FESTIVAL",
     title: "2026 Jeonju Ultimate Music Festival",
-    time: "",
+    time: "추후 공개",
     location: "전주대학교 인조잔디구장",
     tickets: [
   {
@@ -118,7 +118,7 @@ const REDOOR_EVENTS = [
     date: "2026-09-06",
     type: "FESTIVAL",
     title: "MADLY MEDLEY 2026",
-    time: "",
+    time: "추후 공개",
     location: "문화비축기지",
     tickets: [
   { name: "NOL 티켓", url: "https://tickets.interpark.com/goods/26009656" },
