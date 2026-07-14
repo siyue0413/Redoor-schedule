@@ -40,7 +40,9 @@ function formatUpcomingDate(dateString) {
 }
 function getDisplayTitle(event) {
   if (event.type === "ANNIVERSARY" && event.startYear) {
-    const anniversary = currentYear - event.startYear;
+    const anniversary =
+  (event.yearly ? currentYear : Number(event.date.slice(0, 4)))
+  - event.startYear;
 
     if (anniversary > 0) {
       return `${event.title} ${anniversary}주년`;
