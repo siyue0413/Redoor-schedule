@@ -5,7 +5,6 @@ const eventPanel = document.getElementById("eventPanel");
 const prevMonthButton = document.getElementById("prevMonth");
 const nextMonthButton = document.getElementById("nextMonth");
 
-const now = new Date();
 let currentYear = 2026;
 let currentMonth = 7; // 0부터 시작: 7은 8월
 let selectedDate = null;
@@ -70,7 +69,7 @@ function renderCalendar() {
     }
 
     const dateKey = formatDateKey(cellYear, cellMonth, cellDate);
-    const events = getEventsByDate(dateKey);
+    const events = otherMonth ? [] : getEventsByDate(dateKey);
 
     const cell = document.createElement("button");
     cell.type = "button";
@@ -87,14 +86,15 @@ function renderCalendar() {
     cell.appendChild(number);
 
     if (events.length > 0) {
-      const dot = document.createElement("div");
-      dot.className = "event-dot";
-      cell.appendChild(dot);
+      const title = document.createElement("span");
+      title.className = "event-title-mini";
+      title.textContent = events[0].title;
+      cell.appendChild(title);
 
-      const eventTitle = document.createElement("span");
-      eventTitle.className = "cell-event-title";
-      eventTitle.textContent = events[0].title;
-      cell.appendChild(eventTitle);
+      const tag = document.createElement("span");
+      tag.className = "event-tag";
+      tag.textContent = events[0].type;
+      cell.appendChild(tag);
 
       cell.addEventListener("click", () => selectEvent(events[0]));
     } else {
@@ -125,10 +125,10 @@ function renderUpcoming() {
     item.type = "button";
     item.className = "upcoming-item";
     item.innerHTML = `
-      <div class="upcoming-date">● &nbsp;${formatUpcomingDate(event.date)}</div>
+      <div class="upcoming-date">${formatUpcomingDate(event.date)}</div>
       <div>
-        <div class="upcoming-title">${event.title}</div>
-        <div class="upcoming-meta">${event.location}${event.city ? ` · ${event.city}` : ""}</div>
+        <div class="upcoming-title">[${event.type}] ${event.title}</div>
+        <div class="upcoming-meta">${event.location || ""}${event.city ? ` · ${event.city}` : ""}</div>
       </div>
       <div class="upcoming-time">${event.time || ""} &nbsp;›</div>
     `;
@@ -152,7 +152,7 @@ function selectEvent(event) {
     <button class="close-button" type="button" aria-label="상세 닫기">×</button>
     <p class="event-date">${event.date.replaceAll("-", ".")}</p>
     <h2>${event.title}</h2>
-    <span class="event-type">${event.type || "SCHEDULE"}</span>
+    <span class="event-type">${event.type}</span>
 
     <div class="detail-list">
       <div class="detail-row">
@@ -186,21 +186,23 @@ function selectEvent(event) {
     </div>
   `;
 
-  eventPanel.querySelector(".close-button").addEventListener("click", () => {
-    selectedDate = null;
-    renderCalendar();
-    eventPanel.innerHTML = `
-      <div class="empty-state">
-        <p class="eyebrow">REDOOR SCHEDULE</p>
-        <h2>일정이 있는 날짜를 선택해주세요.</h2>
-        <p>달력의 점이 표시된 날짜를 누르면 상세 일정이 여기에 표시됩니다.</p>
-      </div>
-    `;
-  });
+  eventPanel.querySelector(".close-button").addEventListener("click", resetPanel);
 
   if (window.innerWidth <= 980) {
     eventPanel.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+}
+
+function resetPanel() {
+  selectedDate = null;
+  renderCalendar();
+  eventPanel.innerHTML = `
+    <div class="empty-state">
+      <p class="eyebrow">REDOOR SCHEDULE</p>
+      <h2>일정이 있는 날짜를 선택해주세요.</h2>
+      <p>LIVE, FESTIVAL, BIRTHDAY가 표시된 날짜를 누르면 상세 일정이 여기에 표시됩니다.</p>
+    </div>
+  `;
 }
 
 prevMonthButton.addEventListener("click", () => {
@@ -209,8 +211,7 @@ prevMonthButton.addEventListener("click", () => {
     currentMonth = 11;
     currentYear -= 1;
   }
-  selectedDate = null;
-  renderCalendar();
+  resetPanel();
 });
 
 nextMonthButton.addEventListener("click", () => {
@@ -219,8 +220,7 @@ nextMonthButton.addEventListener("click", () => {
     currentMonth = 0;
     currentYear += 1;
   }
-  selectedDate = null;
-  renderCalendar();
+  resetPanel();
 });
 
 renderCalendar();

@@ -25,19 +25,20 @@
           <h1 id="monthTitle">AUGUST 2026</h1>
         </div>
 
-        <div class="view-tabs" aria-label="보기 방식">
-          <button class="view-tab active" type="button">MONTH</button>
-          <button class="view-tab" type="button" disabled>LIST</button>
-          <button class="view-tab" type="button" disabled>YEAR</button>
+        <div class="legend" aria-label="일정 구분">
+          <span>LIVE</span>
+          <span>FESTIVAL</span>
+          <span>BIRTHDAY</span>
         </div>
       </div>
 
-      <div class="calendar-grid weekdays" aria-hidden="true">
-        <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div>
-        <div>THU</div><div>FRI</div><div>SAT</div>
+      <div class="calendar-frame">
+        <div class="calendar-grid weekdays" aria-hidden="true">
+          <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div>
+          <div>THU</div><div>FRI</div><div>SAT</div>
+        </div>
+        <div id="calendarGrid" class="calendar-grid dates" aria-label="월간 달력"></div>
       </div>
-
-      <div id="calendarGrid" class="calendar-grid dates" aria-label="월간 달력"></div>
 
       <section class="upcoming" id="upcoming">
         <div class="section-title">UPCOMING EVENTS</div>
@@ -49,7 +50,7 @@
       <div class="empty-state">
         <p class="eyebrow">REDOOR SCHEDULE</p>
         <h2>일정이 있는 날짜를 선택해주세요.</h2>
-        <p>달력의 점이 표시된 날짜를 누르면 상세 일정이 여기에 표시됩니다.</p>
+        <p>LIVE, FESTIVAL, BIRTHDAY가 표시된 날짜를 누르면 상세 일정이 여기에 표시됩니다.</p>
       </div>
     </aside>
   </main>
