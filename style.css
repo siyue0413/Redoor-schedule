@@ -511,3 +511,8 @@ button:focus {
 
     z-index: 2;
 }
+.brand-logo {
+  display: block;
+  width: 230px;
+  height: auto;
+}
