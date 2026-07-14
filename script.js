@@ -194,7 +194,7 @@ function eventBlock(event) {
   let displayTitle = event.title;
 
   if (event.type === "ANNIVERSARY" && event.startYear) {
-    const displayYear = Number(event.date.slice(0, 4));
+    const displayYear = currentYear;
     const anniversary = displayYear - event.startYear;
 
     if (anniversary > 0) {
