@@ -86,10 +86,34 @@ const REDOOR_EVENTS = [
     time: "15:50 ~ 16:30",
     location: "송도달빛축제공원",
     tickets: [
-  { name: "NOL 티켓", url: "https://tickets.interpark.com/goods/26006159" },
-  { name: "YES24", url: "https://ticket.yes24.com/Perf/58497" },
-  { name: "엔티켓(인천 할인)", url: "https://ticket2.enticket.com:469/rsvc/rsv_pm_detail.html?pfmIng=1&p_idx=4242" },
-  { name: "NOL WORLD", url: "https://world.nol.com/en/ticket/places/26000456/products/26006159" }
+  {
+    name: "NOL 티켓",
+    url: "https://tickets.interpark.com/goods/26006159"
+  },
+  {
+    name: "KB Pay"
+  },
+  {
+    name: "YES24",
+    url: "https://ticket.yes24.com/Perf/58497"
+  },
+  {
+    name: "엔티켓(인천 할인)",
+    url: "https://ticket2.enticket.com:469/rsvc/rsv_pm_detail.html?pfmIng=1&p_idx=4242"
+  },
+  {
+    name: "NOL WORLD",
+    url: "https://world.nol.com/en/ticket/places/26000456/products/26006159"
+  },
+  {
+    name: "MODERN SKY"
+  },
+  {
+    name: "Trip.com"
+  },
+  {
+    name: "eplus"
+  }
 ]
   },
   {
