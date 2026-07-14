@@ -199,6 +199,7 @@ button, a {
 
 .date-cell.has-event .date-number.single-digit::after {
   width: 12px;
+  margin-left: 1px;
 }
 
 .event-title-list {
