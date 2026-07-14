@@ -16,7 +16,7 @@ const REDOOR_EVENTS = [
     ticket: ""
   },
   {
-  date: "2026-01-09",
+  date: "2021-01-09",
   type: "ANNIVERSARY",
   title: "리도어 데뷔",
   yearly: true,
