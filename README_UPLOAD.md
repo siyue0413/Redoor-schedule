@@ -1,16 +1,12 @@
-# REDOOR Schedule Final v1
+# REDOOR Schedule Final v2
 
-GitHub 저장소에 아래 4개 파일을 덮어쓰세요.
+변경사항
+- Road to BU-ROCK Fukuoka 분류를 FESTIVAL로 변경
+- 같은 날짜에 일정이 여러 개 있으면 달력 칸에 각 일정명을 따로 표시
+- 7월 26일 Billboard Live TAIPEI 1st / 2nd Show가 모두 표시됨
+- 날짜 클릭 시 오른쪽 상세에도 두 일정이 각각 표시됨
 
-- index.html
-- style.css
-- script.js
+GitHub에 아래 파일을 덮어쓰세요.
 - events.js
-
-반영 내용
-- 7/17 Road to BU-ROCK Fukuoka 추가
-- 최승현 생일로 수정
-- 주상욱 생일 추가
-- 사운드베리/펜타포트 공연 시간 반영
-- 예매 정보가 URL이면 버튼, 텍스트면 예매처 표시
-- 같은 날짜의 여러 일정 지원
+- script.js
+- style.css

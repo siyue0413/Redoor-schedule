@@ -198,17 +198,28 @@ button, a {
 }
 
 
-.event-title-mini {
+.event-title-list {
   position: absolute;
   top: 34px;
   left: 8px;
   right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  overflow: hidden;
+}
+
+.event-title-mini {
   display: block;
+  min-width: 0;
   margin: 0;
   padding: 0;
   font-size: 11px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.25;
   word-break: keep-all;
   text-align: left;
   white-space: nowrap;
@@ -424,5 +435,20 @@ button, a {
     width: 14px;
     height: 2px;
     margin-top: 2px;
+  }
+}
+
+
+@media (max-width: 680px) {
+  .event-title-list {
+    top: 29px;
+    left: 6px;
+    right: 6px;
+    gap: 2px;
+  }
+
+  .event-title-mini {
+    font-size: 8px;
+    line-height: 1.15;
   }
 }

@@ -123,14 +123,17 @@ function renderCalendar() {
     cell.appendChild(number);
 
     if (events.length > 0) {
-      const title = document.createElement("span");
-      title.className = "event-title-mini";
-      title.textContent =
-        events.length > 1
-          ? `${events[0].title} 외 ${events.length - 1}건`
-          : events[0].title;
-      cell.appendChild(title);
+      const titleList = document.createElement("span");
+      titleList.className = "event-title-list";
 
+      events.forEach((event) => {
+        const title = document.createElement("span");
+        title.className = "event-title-mini";
+        title.textContent = event.title;
+        titleList.appendChild(title);
+      });
+
+      cell.appendChild(titleList);
       cell.addEventListener("click", () => selectEvents(events));
     } else {
       cell.disabled = true;
