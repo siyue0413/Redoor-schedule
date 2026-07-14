@@ -193,14 +193,14 @@ function eventBlock(event) {
 
   let displayTitle = event.title;
 
-  if (event.type === "ANNIVERSARY" && event.startYear) {
-    const displayYear = currentYear;
-    const anniversary = displayYear - event.startYear;
+ if (event.type === "ANNIVERSARY" && event.startYear) {
+  const displayYear = currentYear;
+  const anniversary = displayYear - event.startYear;
 
-    if (anniversary > 0) {
-      displayTitle = `${event.title} ${anniversary}주년`;
-    }
+  if (anniversary > 0) {
+    displayTitle = `${event.title} ${anniversary}주년`;
   }
+}
 
   return `
     <section class="selected-event">
