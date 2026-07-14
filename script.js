@@ -157,7 +157,7 @@ if (dateKey === todayKey) {
       });
 
       cell.appendChild(titleList);
-      cell.addEventListener("click", () => selectEvents(events,dateKey));
+      cell.addEventListener("click", () => selectEvents(events, dateKey));
     } else {
       cell.disabled = true;
     }
