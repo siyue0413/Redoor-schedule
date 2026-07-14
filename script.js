@@ -157,7 +157,7 @@ if (dateKey === todayKey) {
       });
 
       cell.appendChild(titleList);
-      cell.addEventListener("click", () => selectEvents(events));
+      cell.addEventListener("click", () => selectEvents(events,dateKey));
     } else {
       cell.disabled = true;
     }
@@ -224,8 +224,8 @@ function eventBlock(event) {
   `;
 }
 
-function selectEvents(events) {
-  selectedDate = events[0].date;
+function function selectEvents(events, dateKey = events[0].date) {
+  selectedDate = datekey;
   renderCalendar();
 
   eventPanel.innerHTML = `
