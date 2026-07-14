@@ -11,11 +11,7 @@ const REDOOR_EVENTS = [
     location: "공연장",
     city: "SEOUL",
     ticketUrl: "",
-    memo: "샘플 일정입니다. 실제 일정으로 바꿔주세요.",
-    setlistUrl: "",
-    photosUrl: "",
-    videosUrl: "",
-    reviewUrl: ""
+    memo: "샘플 일정입니다. 실제 일정으로 바꿔주세요."
   },
   {
     date: "2026-08-22",
@@ -25,11 +21,7 @@ const REDOOR_EVENTS = [
     location: "행사장",
     city: "INCHEON",
     ticketUrl: "",
-    memo: "페스티벌과 대학축제는 FESTIVAL로 분류합니다.",
-    setlistUrl: "",
-    photosUrl: "",
-    videosUrl: "",
-    reviewUrl: ""
+    memo: "페스티벌과 대학축제는 FESTIVAL로 분류합니다."
   },
   {
     date: "2026-08-30",
@@ -39,10 +31,6 @@ const REDOOR_EVENTS = [
     location: "",
     city: "",
     ticketUrl: "",
-    memo: "실제 멤버 이름과 생일로 바꿔주세요.",
-    setlistUrl: "",
-    photosUrl: "",
-    videosUrl: "",
-    reviewUrl: ""
+    memo: "실제 멤버 이름과 생일로 바꿔주세요."
   }
 ];

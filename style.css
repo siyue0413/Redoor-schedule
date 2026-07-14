@@ -149,13 +149,14 @@ button, a {
   appearance: none;
   position: relative;
   min-height: 112px;
-  padding: 14px 12px 12px;
+  padding: 12px;
   border: 0;
   border-right: 1px solid var(--inner-line);
   border-bottom: 1px solid var(--inner-line);
   background: var(--white);
   color: var(--black);
   text-align: left;
+  display: block;
 }
 
 .date-cell:nth-child(7n) {
@@ -185,13 +186,15 @@ button, a {
 }
 
 .date-number {
-  display: inline-flex;
-  width: 32px;
-  height: 32px;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: left;
   font-size: 14px;
   font-weight: 700;
+  line-height: 1;
 }
 
 .event-tag {
@@ -347,33 +350,6 @@ button, a {
   text-decoration: none;
   font-size: 12px;
   font-weight: 800;
-}
-
-.content-links {
-  margin-top: 34px;
-}
-
-.content-links h3 {
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--black);
-  font-size: 13px;
-  margin-bottom: 0;
-}
-
-.content-link {
-  display: flex;
-  justify-content: space-between;
-  padding: 17px 0;
-  border-bottom: 1px solid var(--inner-line);
-  color: var(--black);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.content-link.disabled {
-  color: #b0b0b0;
-  pointer-events: none;
 }
 
 .site-footer {

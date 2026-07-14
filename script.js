@@ -137,13 +137,6 @@ function renderUpcoming() {
   });
 }
 
-function contentLink(label, url) {
-  if (!url) {
-    return `<span class="content-link disabled"><span>${label}</span><span>준비 중</span></span>`;
-  }
-  return `<a class="content-link" href="${url}" target="_blank" rel="noopener"><span>${label}</span><span>›</span></a>`;
-}
-
 function selectEvent(event) {
   selectedDate = event.date;
   renderCalendar();
@@ -176,14 +169,6 @@ function selectEvent(event) {
         <div class="detail-value">${event.memo || "-"}</div>
       </div>
     </div>
-
-    <div class="content-links">
-      <h3>EVENT CONTENTS</h3>
-      ${contentLink("SETLIST", event.setlistUrl)}
-      ${contentLink("PHOTOS", event.photosUrl)}
-      ${contentLink("VIDEOS", event.videosUrl)}
-      ${contentLink("REVIEWS", event.reviewUrl)}
-    </div>
   `;
 
   eventPanel.querySelector(".close-button").addEventListener("click", resetPanel);
@@ -200,7 +185,7 @@ function resetPanel() {
     <div class="empty-state">
       <p class="eyebrow">REDOOR SCHEDULE</p>
       <h2>일정이 있는 날짜를 선택해주세요.</h2>
-      <p>LIVE, FESTIVAL, BIRTHDAY가 표시된 날짜를 누르면 상세 일정이 여기에 표시됩니다.</p>
+      <p>일정이 있는 날짜를 누르면 시간, 장소, 예매 정보가 여기에 표시됩니다.</p>
     </div>
   `;
 }
