@@ -481,8 +481,15 @@ button:focus {
     height: 26px;
     border-radius: 50%;
     background: var(--black);
-    color: var(--white);
+    color: var(--white) !important;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: relative;
+    top: -2px;
+    left: -2px;
+
+    z-index: 2;
 }
