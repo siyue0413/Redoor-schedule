@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="REDOOR schedule calendar" />
+  <title>REDOOR Schedule</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="REDOOR Schedule 홈">REDOOR</a>
+    <nav class="top-nav" aria-label="주요 메뉴">
+      <a href="#calendar" class="active">SCHEDULE</a>
+      <a href="#upcoming">UPCOMING</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="calendar-section" id="calendar">
+      <div class="calendar-toolbar">
+        <div class="month-control">
+          <button id="prevMonth" class="icon-button" type="button" aria-label="이전 달">‹</button>
+          <button id="nextMonth" class="icon-button" type="button" aria-label="다음 달">›</button>
+          <h1 id="monthTitle">AUGUST 2026</h1>
+        </div>
+
+        <div class="view-tabs" aria-label="보기 방식">
+          <button class="view-tab active" type="button">MONTH</button>
+          <button class="view-tab" type="button" disabled>LIST</button>
+          <button class="view-tab" type="button" disabled>YEAR</button>
+        </div>
+      </div>
+
+      <div class="calendar-grid weekdays" aria-hidden="true">
+        <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div>
+        <div>THU</div><div>FRI</div><div>SAT</div>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid dates" aria-label="월간 달력"></div>
+
+      <section class="upcoming" id="upcoming">
+        <div class="section-title">UPCOMING EVENTS</div>
+        <div id="upcomingList" class="upcoming-list"></div>
+      </section>
+    </section>
+
+    <aside id="eventPanel" class="event-panel" aria-live="polite">
+      <div class="empty-state">
+        <p class="eyebrow">REDOOR SCHEDULE</p>
+        <h2>일정이 있는 날짜를 선택해주세요.</h2>
+        <p>달력의 점이 표시된 날짜를 누르면 상세 일정이 여기에 표시됩니다.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <strong>REDOOR</strong>
+    <span>FAN-MADE SCHEDULE</span>
+  </footer>
+
+  <script src="events.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
