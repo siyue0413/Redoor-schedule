@@ -190,9 +190,21 @@ function renderUpcoming() {
 }
 
 function eventBlock(event) {
+
+  let displayTitle = event.title;
+
+  if (event.type === "ANNIVERSARY" && event.startYear) {
+    const displayYear = Number(event.date.slice(0, 4));
+    const anniversary = displayYear - event.startYear;
+
+    if (anniversary > 0) {
+      displayTitle = `${event.title} ${anniversary}주년`;
+    }
+  }
+
   return `
     <section class="selected-event">
-      <h2>${event.title}</h2>
+      <h2>${displayTitle}</h2>
       <span class="event-type">${event.type}</span>
 
       <div class="detail-list">
