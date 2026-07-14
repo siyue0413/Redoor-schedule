@@ -15,7 +15,7 @@ const REDOOR_EVENTS = [
   time: "",
   location: "",
   tickets: []
-}
+},
   {
     date: "2026-01-01",
     type: "BIRTHDAY",
