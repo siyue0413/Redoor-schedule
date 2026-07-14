@@ -198,8 +198,8 @@ button, a {
 }
 
 .date-cell.has-event .date-number.single-digit::after {
-  width: 12px;
-  margin-left: -1px;
+  width: 13px;
+  margin-left: -4px;
 }
 
 .event-title-list {
