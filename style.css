@@ -239,6 +239,9 @@ button, a {
 }
 
 .upcoming-item {
+  color: var(--black);
+-webkit-appearance: none;
+appearance: none;
   width: 100%;
   padding: 20px 4px;
   border: 0;
@@ -451,4 +454,25 @@ button, a {
     font-size: 8px;
     line-height: 1.15;
   }
+}
+button,
+
+button:visited,
+
+button:active,
+
+button:focus {
+
+  color: var(--black);
+
+  -webkit-text-fill-color: var(--black);
+
+}
+
+.upcoming-item,
+
+.upcoming-item * {
+
+  color: inherit;
+
 }
