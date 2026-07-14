@@ -38,6 +38,17 @@ function formatUpcomingDate(dateString) {
   const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"][date.getDay()];
   return `${month} ${date.getDate()} ${weekday}`;
 }
+function getDisplayTitle(event) {
+  if (event.type === "ANNIVERSARY" && event.startYear) {
+    const anniversary = currentYear - event.startYear;
+
+    if (anniversary > 0) {
+      return `${event.title} ${anniversary}주년`;
+    }
+  }
+
+  return event.title;
+}
 
 function isUrl(value) {
   return /^https?:\/\//i.test(value || "");
@@ -139,7 +150,7 @@ if (dateKey === todayKey) {
       events.forEach((event) => {
         const title = document.createElement("span");
         title.className = "event-title-mini";
-        title.textContent = event.title;
+        title.textContent = getDisplayTitle(event);
         titleList.appendChild(title);
       });
 
@@ -179,7 +190,7 @@ function renderUpcoming() {
     item.innerHTML = `
       <div class="upcoming-date">${formatUpcomingDate(event.date)}</div>
       <div>
-        <div class="upcoming-title">[${event.type}] ${event.title}</div>
+        <div class="upcoming-title">[${event.type}] ${getDisplayTitle(event)}</div>
         <div class="upcoming-meta">${event.location || ""}</div>
       </div>
       <div class="upcoming-time">${event.time || ""} &nbsp;›</div>
@@ -190,17 +201,7 @@ function renderUpcoming() {
 }
 
 function eventBlock(event) {
-
-  let displayTitle = event.title;
-
- if (event.type === "ANNIVERSARY" && event.startYear) {
-  const displayYear = currentYear;
-  const anniversary = displayYear - event.startYear;
-
-  if (anniversary > 0) {
-    displayTitle = `${event.title} ${anniversary}주년`;
-  }
-}
+  const displayTitle = getDisplayTitle(event);
 
   return `
     <section class="selected-event">
