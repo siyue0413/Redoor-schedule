@@ -1,4 +1,5 @@
 const monthTitle = document.getElementById("monthTitle");
+const monthYear = document.getElementById("monthYear");
 const calendarGrid = document.getElementById("calendarGrid");
 const upcomingList = document.getElementById("upcomingList");
 const eventPanel = document.getElementById("eventPanel");
@@ -110,7 +111,8 @@ function optionalDetailRow(label, value) {
 }
 
 function renderCalendar() {
-  monthTitle.textContent = `${pad(currentMonth + 1)} ${monthNames[currentMonth]}`;
+  monthYear.textContent = `${currentYear}. ${pad(currentMonth + 1)}`;
+  monthTitle.textContent = monthNames[currentMonth];
   calendarGrid.innerHTML = "";
 
   const firstDay = new Date(currentYear, currentMonth, 1).getDay();
@@ -316,9 +318,6 @@ function moveMonth(amount) {
 
 prevMonthButton.addEventListener("click", () => moveMonth(-1));
 nextMonthButton.addEventListener("click", () => moveMonth(1));
-
-/* 화살표를 월 제목 양옆으로 정렬 */
-monthControl.insertBefore(monthTitle, nextMonthButton);
 
 /* 로고 클릭 시 현재 달로 이동 */
 const brandHome = document.querySelector(".brand");
