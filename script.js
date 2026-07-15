@@ -291,21 +291,18 @@ nextMonthButton.addEventListener("click", () => moveMonth(1));
 /* 화살표를 월 제목 양옆으로 정렬 */
 monthControl.insertBefore(monthTitle, nextMonthButton);
 
-/* 현재 달로 돌아가는 HOME 버튼 생성 */
-const homeMonthButton = document.createElement("button");
-homeMonthButton.id = "homeMonth";
-homeMonthButton.className = "home-month-button";
-homeMonthButton.type = "button";
-homeMonthButton.textContent = "HOME";
-homeMonthButton.setAttribute("aria-label", "현재 달로 이동");
+/* 로고 클릭 시 현재 달로 이동 */
+const brandHome = document.querySelector(".brand");
 
-homeMonthButton.addEventListener("click", () => {
-  const now = new Date();
-  currentYear = now.getFullYear();
-  currentMonth = now.getMonth();
-  resetPanel();
-});
+if (brandHome) {
+  brandHome.addEventListener("click", (event) => {
+    event.preventDefault();
 
-monthControl.appendChild(homeMonthButton);
+    const now = new Date();
+    currentYear = now.getFullYear();
+    currentMonth = now.getMonth();
+    resetPanel();
+  });
+}
 
 renderCalendar();
