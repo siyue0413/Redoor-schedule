@@ -1,4 +1,4 @@
-  * {
+* {
   box-sizing: border-box;
 }
 
@@ -23,7 +23,8 @@ body {
   font-family: Arial, "Pretendard", "Noto Sans KR", sans-serif;
 }
 
-button, a {
+button,
+a {
   font: inherit;
 }
 
@@ -44,6 +45,15 @@ button, a {
   letter-spacing: -2px;
 }
 
+.brand-logo {
+  display: block;
+  width: 165px;
+  max-width: 165px;
+  height: auto;
+  margin-left: -14px;
+  object-fit: contain;
+}
+
 .top-nav {
   display: flex;
   gap: 42px;
@@ -54,7 +64,7 @@ button, a {
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   padding: 10px 0;
 }
 
@@ -90,7 +100,7 @@ button, a {
 .month-control h1 {
   margin: 0 0 0 16px;
   font-size: clamp(24px, 2.4vw, 36px);
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
 }
 
 .icon-button {
@@ -98,6 +108,9 @@ button, a {
   height: 42px;
   border: 1px solid var(--inner-line);
   background: var(--white);
+  color: var(--black);
+  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
   font-size: 28px;
   line-height: 1;
@@ -106,7 +119,6 @@ button, a {
 .icon-button:hover {
   background: var(--soft);
 }
-
 
 .calendar-frame {
   border: 2px solid var(--black);
@@ -133,6 +145,7 @@ button, a {
 }
 
 .date-cell {
+  -webkit-appearance: none;
   appearance: none;
   position: relative;
   min-height: 112px;
@@ -187,7 +200,6 @@ button, a {
   line-height: 1;
 }
 
-
 .date-cell.has-event .date-number::after {
   content: "";
   display: block;
@@ -200,6 +212,21 @@ button, a {
 .date-cell.has-event .date-number.single-digit::after {
   width: 13px;
   margin-left: -2px;
+}
+
+.today .date-number {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 4px;
+  left: 4px;
+  z-index: 2;
 }
 
 .event-title-list {
@@ -243,14 +270,14 @@ button, a {
 }
 
 .upcoming-item {
-  color: var(--black);
--webkit-appearance: none;
-appearance: none;
   width: 100%;
   padding: 20px 4px;
   border: 0;
   border-bottom: 1px solid var(--inner-line);
   background: var(--white);
+  color: var(--black);
+  -webkit-appearance: none;
+  appearance: none;
   display: grid;
   grid-template-columns: 105px 1fr auto;
   gap: 20px;
@@ -282,6 +309,12 @@ appearance: none;
 .event-panel {
   padding: 48px 3vw;
   min-height: 680px;
+  overflow: hidden;
+}
+
+.event-panel img {
+  max-width: 100%;
+  height: auto;
 }
 
 .empty-state {
@@ -294,7 +327,7 @@ appearance: none;
   margin: 0 0 18px;
   font-size: 24px;
   font-weight: 800;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 }
 
 .empty-state h2,
@@ -302,7 +335,7 @@ appearance: none;
   margin: 0 0 18px;
   font-size: clamp(30px, 3vw, 48px);
   line-height: 1.02;
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
   word-break: keep-all;
 }
 
@@ -317,6 +350,9 @@ appearance: none;
   margin-bottom: 36px;
   border: 1px solid var(--black);
   background: var(--white);
+  color: var(--black);
+  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
   font-size: 25px;
 }
@@ -329,7 +365,7 @@ appearance: none;
   background: var(--black);
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 .detail-list {
@@ -356,26 +392,26 @@ appearance: none;
 
 .ticket-link {
   display: inline;
-  background: transparent;
-  color: #111;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
   padding: 0;
   margin: 0;
   border: none;
   border-radius: 0;
+  background: transparent;
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
   font-size: inherit;
   font-weight: 600;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .ticket-link:hover {
-  opacity: .65;
+  opacity: 0.65;
 }
 
 .ticket-link:visited {
-  color: #111;
+  color: var(--black);
 }
 
 .site-footer {
@@ -387,6 +423,24 @@ appearance: none;
   justify-content: space-between;
   gap: 20px;
   font-size: 11px;
+}
+
+button,
+button:visited,
+button:active,
+button:focus {
+  color: var(--black);
+  -webkit-text-fill-color: var(--black);
+}
+
+.today .date-number {
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white) !important;
+}
+
+.upcoming-item,
+.upcoming-item * {
+  color: inherit;
 }
 
 @media (max-width: 980px) {
@@ -403,14 +457,20 @@ appearance: none;
   }
 
   .event-panel {
-    border-top: 1px solid var(--inner-line);
     min-height: auto;
+    border-top: 1px solid var(--inner-line);
   }
 }
 
 @media (max-width: 680px) {
   .site-header {
     height: 76px;
+  }
+
+  .brand-logo {
+    width: 145px;
+    max-width: 145px;
+    margin-left: -10px;
   }
 
   .top-nav a:not(.active) {
@@ -429,8 +489,8 @@ appearance: none;
   }
 
   .month-control h1 {
-    font-size: 25px;
     margin-left: 6px;
+    font-size: 25px;
   }
 
   .date-cell {
@@ -439,28 +499,17 @@ appearance: none;
   }
 
   .date-number {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  display: block;
-  width: auto;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1;
+    top: 8px;
+    left: 8px;
+    font-size: 14px;
+  }
 
   .date-cell.has-event .date-number::after {
     width: 14px;
     height: 2px;
     margin-top: 2px;
   }
-}
 
-
-@media (max-width: 680px) {
   .event-title-list {
     top: 29px;
     left: 6px;
@@ -472,48 +521,14 @@ appearance: none;
     font-size: 8px;
     line-height: 1.15;
   }
-}
-button,
 
-button:visited,
+  .upcoming-item {
+    grid-template-columns: 92px 1fr auto;
+    gap: 12px;
+  }
 
-button:active,
-
-button:focus {
-
-  color: var(--black);
-
-  -webkit-text-fill-color: var(--black);
-
-}
-
-.upcoming-item,
-
-.upcoming-item * {
-
-  color: inherit;
-
-}
-.today .date-number {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--black);
-    color: var(--white) !important;
--webkit-text-fill-color: var(--white) !important;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    top: 4px;
-    left: 4px;
-
-    z-index: 2;
-}
-.brand-logo {
-  display: block;
-  width:165px;
-  height: auto;
-  margin-left: -14px;
+  .detail-row {
+    grid-template-columns: 84px 1fr;
+    gap: 14px;
+  }
 }
