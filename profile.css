@@ -75,12 +75,6 @@ a {
   letter-spacing: -0.07em;
 }
 
-.profile-title-row span {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-}
-
 .member-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -202,10 +196,6 @@ a {
 
   .profile-title-row h1 {
     font-size: 44px;
-  }
-
-  .profile-title-row span {
-    font-size: 11px;
   }
 
   .member-grid {
