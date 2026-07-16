@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="REDOOR profile" />
+  <title>REDOOR Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <div id="profileIntro" class="profile-intro" aria-hidden="true">
+    <!-- 나중에 .intro-image에 단체사진을 넣으면 됩니다. -->
+    <div class="intro-image">
+      <span>REDOOR</span>
+    </div>
+    <p>CLICK, TOUCH OR SCROLL TO SKIP</p>
+  </div>
+
+  <header class="profile-header">
+    <a class="profile-brand" href="index.html" aria-label="REDOOR Schedule 홈">
+      <img src="IMG_5259.jpeg" alt="REDOOR" />
+    </a>
+    <nav class="profile-nav" aria-label="주요 메뉴">
+      <a class="active" href="profile.html">PROFILE</a>
+      <a href="index.html">SCHEDULE</a>
+      <a href="index.html#upcoming">UPCOMING</a>
+    </nav>
+  </header>
+
+  <main class="profile-main">
+    <section class="profile-title-row" aria-labelledby="profileTitle">
+      <h1 id="profileTitle">PROFILE</h1>
+      <span>REDOOR</span>
+    </section>
+
+    <section class="member-grid" aria-label="리도어 멤버">
+      <!-- 각 .member-photo에 사진을 넣고, POSITION을 실제 포지션으로 바꾸면 됩니다. -->
+      <article class="member-card">
+        <div class="member-photo" role="img" aria-label="이등대 프로필 사진 자리">PHOTO 01</div>
+        <h2>이등대</h2>
+        <p>POSITION</p>
+      </article>
+      <article class="member-card">
+        <div class="member-photo" role="img" aria-label="주상욱 프로필 사진 자리">PHOTO 02</div>
+        <h2>주상욱</h2>
+        <p>POSITION</p>
+      </article>
+      <article class="member-card">
+        <div class="member-photo" role="img" aria-label="박세웅 프로필 사진 자리">PHOTO 03</div>
+        <h2>박세웅</h2>
+        <p>POSITION</p>
+      </article>
+      <article class="member-card">
+        <div class="member-photo" role="img" aria-label="최승현 프로필 사진 자리">PHOTO 04</div>
+        <h2>최승현</h2>
+        <p>POSITION</p>
+      </article>
+    </section>
+
+    <section class="profile-note" aria-label="프로필 안내">
+      <p>PUBLIC PROFILE INFORMATION WILL BE ADDED SOON.</p>
+    </section>
+  </main>
+
+  <footer class="profile-footer">
+    <strong>REDOOR</strong>
+    <span>FAN-MADE PROFILE</span>
+  </footer>
+
+  <script src="profile.js"></script>
+</body>
+</html>
