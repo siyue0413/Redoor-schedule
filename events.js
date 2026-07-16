@@ -186,6 +186,19 @@ const REDOOR_EVENTS = [
     ticket: "Trip Events"
   },
   {
+    date: "2026-10-02",
+    type: "FESTIVAL",
+    title: "2026 부산국제록페스티벌",
+    time: "추후 공개",
+    location: "삼락생태공원",
+    ticketLinks: [
+      {
+        name: "YES24",
+        url: "https://m.ticket.yes24.com/Perf/58933"
+      }
+    ]
+  },
+  {
     date: "2026-10-17",
     type: "FESTIVAL",
     title: "GRAND MINT FESTIVAL 2026",
