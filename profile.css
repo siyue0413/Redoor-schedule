@@ -208,19 +208,28 @@ a {
 @media (max-width: 680px) {
   .profile-header {
     height: 76px;
+    padding: 0 18px;
+    gap: 12px;
+  }
+
+  .profile-brand {
+    flex: 0 0 auto;
   }
 
   .profile-brand img {
-    width: 170px;
-    margin-left: -10px;
+    width: 150px;
+    margin-left: -8px;
   }
 
   .profile-nav {
-    gap: 18px;
+    flex: 0 0 auto;
+    gap: 12px;
+    margin-left: auto;
+    white-space: nowrap;
   }
 
   .profile-nav a {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .profile-main {
